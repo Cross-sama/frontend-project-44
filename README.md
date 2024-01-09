@@ -3,4 +3,10 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/3e4885551efbbffadf18/maintainability)](https://codeclimate.com/github/Cross-sama/frontend-project-44/maintainability)
 
-https://asciinema.org/a/3a6aSqYtLVln1VHPcdoLWpMtJ
+Brain-Even:
+
+https://asciinema.org/a/630127
+
+Brain-Calc:
+
+https://asciinema.org/a/630620
