@@ -10,3 +10,7 @@ https://asciinema.org/a/630127
 Brain-Calc:
 
 https://asciinema.org/a/630620
+
+Brain-Gcd:
+
+https://asciinema.org/a/631083
