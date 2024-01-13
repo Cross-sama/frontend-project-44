@@ -18,3 +18,7 @@ https://asciinema.org/a/631083
 Brain-Progression:
 
 https://asciinema.org/a/631213
+
+Brain-Prime:
+
+https://asciinema.org/a/631226
