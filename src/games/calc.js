@@ -5,32 +5,26 @@ const brainCalc = () => {
   const randomNumber2 = Math.floor((Math.random() * 100) + 1);
   const randomMathAct = Math.floor(Math.random() * 3);
 
-  const mathAction = () => {
+  const correctAnswer = () => {
+    let mathAct = '';
     let result = '';
     if (randomMathAct === 0) {
-      result = '+';
-    } else if (randomMathAct === 1) {
-      result = '-';
-    } else {
-      result = '*';
-    }
-    return result;
-  };
-
-  const correctAnswer = () => {
-    let result = '';
-    if (mathAction() === '+') {
       result = randomNumber1 + randomNumber2;
-    } else if (mathAction() === '-') {
+      mathAct = '+';
+    } else if (randomMathAct === 1) {
       result = randomNumber1 - randomNumber2;
+      mathAct = '-';
     } else {
       result = randomNumber1 * randomNumber2;
+      mathAct = '*';
     }
-    return result;
+    const mathActAndResult = [mathAct, result];
+    return mathActAndResult;
   };
+  const randomMathActAndResult = correctAnswer();
 
-  const gameQuestion = `Question: ${randomNumber1} ${mathAction()} ${randomNumber2}`;
-  const answer = String(correctAnswer());
+  const gameQuestion = `Question: ${randomNumber1} ${randomMathActAndResult[0]} ${randomNumber2}`;
+  const answer = String(randomMathActAndResult[1]);
 
   const questionsAndAnswerArr = [gameQuestion, answer];
   return questionsAndAnswerArr;
