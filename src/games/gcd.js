@@ -1,26 +1,19 @@
 import gameLogic from '../index.js';
 
 const brainGcd = () => {
-  const randomNumber1 = Math.floor((Math.random() * 20) + 1);
-  const randomNumber2 = Math.floor((Math.random() * 20) + 1);
+  let x = Math.floor((Math.random() * 20) + 1);
+  let y = Math.floor((Math.random() * 20) + 1);
 
-  let x = randomNumber1;
-  let y = randomNumber2;
   const correctAnswer = () => {
-    for (let i = 1; i < 2; i += 1) {
-      while (x && y) {
-        if (x > y) {
-          x %= y;
-        } else {
-          y %= x;
-        }
-      }
-      x += y;
+    while (y) {
+      const t = y;
+      y = x % y;
+      x = t;
     }
     return x;
   };
 
-  const gameQuestion = `Question: ${randomNumber1} ${randomNumber2}`;
+  const gameQuestion = `Question: ${x} ${y}`;
   const answer = String(correctAnswer());
 
   const questionsAndAnswerArr = [gameQuestion, answer];
