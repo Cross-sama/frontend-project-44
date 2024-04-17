@@ -20,14 +20,11 @@ const gameLogic = (generalQuestion, questionAndAnswer) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${questionAndCorrectAnswer[1]}'.`);
-      break;
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
-  if (counterOfRounds === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default gameLogic;
