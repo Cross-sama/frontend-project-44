@@ -1,7 +1,8 @@
 import gameLogic from '../index.js';
+import generateRandomNum from '../randomNum.js';
 
 const brainPrime = () => {
-  const randomNumber = Math.floor((Math.random() * 20) + 1);
+  const randomNumber = generateRandomNum(20, 1);
 
   const isPrime = (num) => {
     for (let i = 2; i < num; i += 1) {

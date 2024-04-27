@@ -1,8 +1,9 @@
 import gameLogic from '../index.js';
+import generateRandomNum from '../randomNum.js';
 
 const brainProgression = () => {
-  const firstNumOfPro = Math.floor((Math.random() * 10) + 1);
-  const stepOfProg = Math.floor((Math.random() * 5) + 1);
+  const firstNumOfPro = generateRandomNum(10, 1);
+  const stepOfProg = generateRandomNum(5, 1);
 
   let x = firstNumOfPro;
   const progression = [];
@@ -11,7 +12,7 @@ const brainProgression = () => {
     progression.push(x);
   }
 
-  const randomSkipInProg = Math.floor((Math.random() * 10));
+  const randomSkipInProg = generateRandomNum(10, 0);
 
   const answer = String(progression[randomSkipInProg]);
 

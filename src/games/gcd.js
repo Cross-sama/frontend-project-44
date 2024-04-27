@@ -1,8 +1,9 @@
 import gameLogic from '../index.js';
+import generateRandomNum from '../randomNum.js';
 
 const brainGcd = () => {
-  let x = Math.floor((Math.random() * 20) + 1);
-  let y = Math.floor((Math.random() * 20) + 1);
+  let x = generateRandomNum(20, 1);
+  let y = generateRandomNum(20, 1);
   const yForQuestion = y;
 
   while (y) {

@@ -1,9 +1,10 @@
 import gameLogic from '../index.js';
+import generateRandomNum from '../randomNum.js';
 
 const brainCalc = () => {
-  const randomNumber1 = Math.floor((Math.random() * 100) + 1);
-  const randomNumber2 = Math.floor((Math.random() * 100) + 1);
-  const randomMathAct = Math.floor(Math.random() * 3);
+  const randomNumber1 = generateRandomNum(100, 1);
+  const randomNumber2 = generateRandomNum(100, 1);
+  const randomMathAct = generateRandomNum(3, 0);
 
   let mathAct = '';
   let result = '';

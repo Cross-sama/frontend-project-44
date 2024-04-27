@@ -1,7 +1,8 @@
 import gameLogic from '../index.js';
+import generateRandomNum from '../randomNum.js';
 
 const brainEven = () => {
-  const randomNumber = Math.floor((Math.random() * 100) + 1);
+  const randomNumber = generateRandomNum(100, 1);
 
   let answer = '';
   if (randomNumber % 2 === 0) {
