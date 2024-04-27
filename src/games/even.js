@@ -3,18 +3,14 @@ import gameLogic from '../index.js';
 const brainEven = () => {
   const randomNumber = Math.floor((Math.random() * 100) + 1);
 
-  const correctAnswer = () => {
-    let result = '';
-    if (randomNumber % 2 === 0) {
-      result = 'yes';
-    } else {
-      result = 'no';
-    }
-    return result;
-  };
+  let answer = '';
+  if (randomNumber % 2 === 0) {
+    answer = 'yes';
+  } else {
+    answer = 'no';
+  }
 
   const gameQuestion = `Question: ${randomNumber}`;
-  const answer = correctAnswer();
 
   const questionAndAnswerArr = [gameQuestion, answer];
   return questionAndAnswerArr;
