@@ -1,33 +1,21 @@
 import gameLogic from '../index.js';
 import generateRandomNum from '../randomNum.js';
+import generateQuestionAndAnswerForBrainProgression from '../questionAndAnswerForBrainProgression.js';
 
-const brainProgression = () => {
+const generateBrainProgression = () => {
   const firstNumOfPro = generateRandomNum(10, 1);
   const stepOfProg = generateRandomNum(5, 1);
 
-  let x = firstNumOfPro;
-  const progression = [];
-  for (let i = 1; i <= 10; i += 1) {
-    x += stepOfProg;
-    progression.push(x);
-  }
+  const questionAndAnswer = generateQuestionAndAnswerForBrainProgression(firstNumOfPro, stepOfProg);
 
-  const randomSkipInProg = generateRandomNum(10, 0);
+  const gameQuestion = `Question: ${questionAndAnswer[0]}`;
 
-  const answer = String(progression[randomSkipInProg]);
-
-  progression[randomSkipInProg] = '..';
-
-  const completeProg = progression.join(' ');
-
-  const gameQuestion = `Question: ${completeProg}`;
-
-  const questionsAndAnswerArr = [gameQuestion, answer];
+  const questionsAndAnswerArr = [gameQuestion, questionAndAnswer[1]];
   return questionsAndAnswerArr;
 };
 
 const generalQuestion = 'What number is missing in the progression?';
 
-gameLogic(generalQuestion, brainProgression);
+gameLogic(generalQuestion, generateBrainProgression);
 
-export default brainProgression;
+export default generateBrainProgression;
