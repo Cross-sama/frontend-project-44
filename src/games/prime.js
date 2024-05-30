@@ -1,8 +1,14 @@
 import gameLogic from '../index.js';
 import generateRandomNum from '../randomNum.js';
-import isPrime from '../isPrimeNum.js';
 
-const generateQuestionAndAnswerForBrainPrime = () => {
+const isPrime = (num) => {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) return false;
+  }
+  return num > 1;
+};
+
+const generateAnswerAndQuestion = () => {
   const randomNumber = generateRandomNum(20, 1);
 
   let answer = '';
@@ -11,13 +17,15 @@ const generateQuestionAndAnswerForBrainPrime = () => {
   } else {
     answer = 'no';
   }
+
   const gameQuestion = `Question: ${randomNumber}`;
   const questionsAndAnswerArr = [gameQuestion, answer];
   return questionsAndAnswerArr;
 };
 
 const generalQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const launchBrainPrime = () => {
+  gameLogic(generalQuestion, generateAnswerAndQuestion);
+};
 
-gameLogic(generalQuestion, generateQuestionAndAnswerForBrainPrime);
-
-export default generateQuestionAndAnswerForBrainPrime;
+export default launchBrainPrime;
