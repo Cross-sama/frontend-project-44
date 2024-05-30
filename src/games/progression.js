@@ -4,7 +4,7 @@ import generateRandomNum from '../randomNum.js';
 const generateProgression = (firstNumOfProg, stepOfProg) => {
   const progression = [];
   let stepsInProg = firstNumOfProg;
-  for (let i = 1; i <= 10; i += 1) {
+  for (let i = 1; i <= 11; i += 1) {
     stepsInProg += stepOfProg;
     progression.push(stepsInProg);
   }
