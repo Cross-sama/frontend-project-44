@@ -1,30 +1,27 @@
 import gameLogic from '../index.js';
 import generateRandomNum from '../randomNum.js';
 
-const evenOrNot = (questionNum) => {
-  let answer = '';
-  if (questionNum % 2 === 0) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
-  return answer;
-};
+const isOdd = (questionNum) => questionNum % 2 !== 0;
 
-const generateAnswerAndQuestion = () => {
+const generateGameData = () => {
   const questionNum = generateRandomNum(100, 1);
 
   const gameQuestion = `Question: ${questionNum}`;
 
-  const answer = evenOrNot(questionNum);
+  let answer = '';
+  if (isOdd(questionNum) === false) {
+    answer = 'yes';
+  } else {
+    answer = 'no';
+  }
 
   const questionAndAnswerArr = [gameQuestion, answer];
   return questionAndAnswerArr;
 };
 
-const generalQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 const launchBrainEven = () => {
-  gameLogic(generalQuestion, generateAnswerAndQuestion);
+  const generalQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+  gameLogic(generalQuestion, generateGameData);
 };
 
 export default launchBrainEven;

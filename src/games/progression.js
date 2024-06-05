@@ -11,7 +11,7 @@ const generateProgression = (firstNumOfProg, stepOfProg) => {
   return progression;
 };
 
-const generateBrainProgression = () => {
+const generateGameData = () => {
   const firstNumOfProg = generateRandomNum(10, 1);
   const stepOfProg = generateRandomNum(5, 1);
   const randomSkipInProg = generateRandomNum(10, 1);
@@ -29,9 +29,9 @@ const generateBrainProgression = () => {
   return questionsAndAnswerArr;
 };
 
-const generalQuestion = 'What number is missing in the progression?';
 const launchBrainProgression = () => {
-  gameLogic(generalQuestion, generateBrainProgression);
+  const generalQuestion = 'What number is missing in the progression?';
+  gameLogic(generalQuestion, generateGameData);
 };
 
 export default launchBrainProgression;

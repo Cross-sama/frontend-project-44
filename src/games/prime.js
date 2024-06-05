@@ -8,7 +8,7 @@ const isPrime = (num) => {
   return num > 1;
 };
 
-const generateAnswerAndQuestion = () => {
+const generateGameData = () => {
   const randomNumber = generateRandomNum(20, 1);
 
   let answer = '';
@@ -23,9 +23,9 @@ const generateAnswerAndQuestion = () => {
   return questionsAndAnswerArr;
 };
 
-const generalQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const launchBrainPrime = () => {
-  gameLogic(generalQuestion, generateAnswerAndQuestion);
+  const generalQuestion = 'Find the greatest common divisor of given numbers.';
+  gameLogic(generalQuestion, generateGameData);
 };
 
 export default launchBrainPrime;
