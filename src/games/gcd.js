@@ -13,7 +13,7 @@ const countGCDFromTwoNums = (randomNum1, randomNum2) => {
   return gcd;
 };
 
-const generateGameData = () => {
+const generateAnswerAndQuestion = () => {
   const randomNum1 = generateRandomNum(20, 1);
   const randomNum2 = generateRandomNum(20, 1);
   const question = randomNum2;
@@ -25,9 +25,9 @@ const generateGameData = () => {
   return questionsAndAnswerArr;
 };
 
+const generalQuestion = 'Find the greatest common divisor of given numbers.';
 const launchBrainGCD = () => {
-  const generalQuestion = 'Find the greatest common divisor of given numbers.';
-  gameLogic(generalQuestion, generateGameData);
+  gameLogic(generalQuestion, generateAnswerAndQuestion);
 };
 
 export default launchBrainGCD;
