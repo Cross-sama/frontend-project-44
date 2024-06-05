@@ -24,7 +24,7 @@ const generateGameData = () => {
 };
 
 const launchBrainPrime = () => {
-  const generalQuestion = 'Find the greatest common divisor of given numbers.';
+  const generalQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   gameLogic(generalQuestion, generateGameData);
 };
 
